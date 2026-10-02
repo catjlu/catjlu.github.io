@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Catherine Jie Lu</title>
+<meta name="description" content="Catherine Jie Lu — Honours Economics student at McGill University. Econometrics research, investment analysis, and capital markets.">
+<meta property="og:title" content="Catherine Jie Lu">
+<meta property="og:description" content="Honours Economics, McGill University — econometrics research, investment analysis, capital markets.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%237a1f2b'/><text x='50%' y='54%' text-anchor='middle' dominant-baseline='middle' font-family='Georgia,serif' font-size='30' fill='white'>CL</text></svg>">
+<style>
+  :root {
+    --bg: #fbfaf7;
+    --text: #1d1c1a;
+    --muted: #6a665f;
+    --rule: #e4e0d8;
+    --accent: #7a1f2b;
+    --accent-soft: #f3e9e8;
+    --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+    --sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #161514;
+      --text: #ebe7e0;
+      --muted: #a39d93;
+      --rule: #2e2c29;
+      --accent: #e08d97;
+      --accent-soft: #2a1d1f;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--serif);
+    font-size: 18px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color .15s; }
+  a:hover { border-bottom-color: currentColor; }
+
+  /* Nav */
+  nav {
+    position: sticky; top: 0; z-index: 10;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--rule);
+  }
+  .nav-inner {
+    max-width: 960px; margin: 0 auto; padding: 14px 24px;
+    display: flex; justify-content: space-between; align-items: center; gap: 16px;
+    font-family: var(--sans); font-size: 14px;
+  }
+  .nav-name { color: var(--text); font-weight: 600; letter-spacing: .01em; }
+  .nav-links { display: flex; gap: 22px; flex-wrap: wrap; }
+  .nav-links a { color: var(--muted); }
+  .nav-links a:hover { color: var(--accent); border-bottom-color: transparent; }
+
+  main { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+
+  /* Hero */
+  .hero {
+    padding: 88px 0 64px;
+    display: grid; grid-template-columns: 1fr; gap: 28px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .eyebrow {
+    font-family: var(--sans); font-size: 13px; font-weight: 500;
+    letter-spacing: .12em; text-transform: uppercase; color: var(--accent);
+    margin: 0;
+  }
+  h1 {
+    font-size: clamp(40px, 6vw, 60px); line-height: 1.08; font-weight: 600;
+    margin: 0; letter-spacing: -.01em;
+  }
+  .lede { font-size: 21px; color: var(--muted); max-width: 680px; margin: 0; }
+  .lede em { color: var(--text); font-style: italic; }
+  .actions { display: flex; flex-wrap: wrap; gap: 12px; font-family: var(--sans); font-size: 15px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 10px 18px; border-radius: 6px; border: 1px solid var(--rule);
+    color: var(--text); background: transparent; font-weight: 500;
+    transition: border-color .15s, background .15s;
+  }
+  .btn:hover { border-color: var(--accent); border-bottom-color: var(--accent); }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+  .btn.primary:hover { opacity: .9; }
+  .btn svg { width: 16px; height: 16px; }
+
+  /* Sections */
+  section { padding: 64px 0; border-bottom: 1px solid var(--rule); }
+  section:last-of-type { border-bottom: none; }
+  .section-grid { display: grid; grid-template-columns: 200px 1fr; gap: 40px; }
+  h2 {
+    font-family: var(--sans); font-size: 13px; font-weight: 600;
+    letter-spacing: .12em; text-transform: uppercase; color: var(--muted);
+    margin: 6px 0 0;
+  }
+  h3 { font-size: 21px; font-weight: 600; margin: 0; line-height: 1.35; }
+  .entry + .entry { margin-top: 40px; }
+  .meta {
+    font-family: var(--sans); font-size: 14px; color: var(--muted);
+    display: flex; flex-wrap: wrap; gap: 4px 14px; margin: 4px 0 12px;
+  }
+  .meta .role { color: var(--text); font-weight: 500; }
+  ul.points { margin: 0; padding-left: 20px; }
+  ul.points li { margin-bottom: 6px; }
+  ul.points li::marker { color: var(--accent); }
+
+  /* Research cards */
+  .paper {
+    border-left: 3px solid var(--accent);
+    padding: 4px 0 4px 22px;
+  }
+  .paper .title { font-style: italic; }
+  .tag {
+    display: inline-block; font-family: var(--sans); font-size: 12px; font-weight: 500;
+    padding: 2px 9px; border-radius: 999px; background: var(--accent-soft); color: var(--accent);
+    margin: 0 6px 6px 0;
+  }
+  .tags { margin-top: 12px; }
+
+  /* Course grid */
+  .courses { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 8px 24px; margin: 16px 0 0; padding: 0; list-style: none; font-size: 16px; }
+  .courses li { display: flex; justify-content: space-between; gap: 12px; border-bottom: 1px dotted var(--rule); padding: 4px 0; }
+  .courses .grade { font-family: var(--sans); font-size: 14px; color: var(--accent); font-weight: 600; }
+
+  /* Skills */
+  .skills dl { margin: 0; display: grid; grid-template-columns: 120px 1fr; gap: 14px 20px; }
+  .skills dt { font-family: var(--sans); font-size: 14px; color: var(--muted); padding-top: 3px; }
+  .skills dd { margin: 0; }
+
+  /* Contact */
+  .contact-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; font-family: var(--sans); font-size: 16px; }
+  .contact-list li { display: flex; gap: 14px; }
+  .contact-list .label { width: 90px; color: var(--muted); flex-shrink: 0; }
+
+  footer {
+    max-width: 960px; margin: 0 auto; padding: 32px 24px 48px;
+    font-family: var(--sans); font-size: 13px; color: var(--muted);
+    border-top: 1px solid var(--rule);
+  }
+
+  @media (max-width: 720px) {
+    body { font-size: 17px; }
+    .nav-inner { padding: 12px 16px; }
+    .nav-links { display: none; }
+    main, footer { padding-left: 16px; padding-right: 16px; }
+    .hero { padding: 56px 0 44px; }
+    .lede { font-size: 19px; }
+    section { padding: 44px 0; }
+    .section-grid { grid-template-columns: 1fr; gap: 18px; }
+    .skills dl { grid-template-columns: 1fr; gap: 2px; }
+    .skills dd { margin-bottom: 12px; }
+  }
+  @media print {
+    nav, .actions { display: none; }
+    section { padding: 24px 0; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#top" class="nav-name">Catherine Jie Lu</a>
+    <div class="nav-links">
+      <a href="#research">Research</a>
+      <a href="#experience">Experience</a>
+      <a href="#leadership">Leadership</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<main id="top">
+
+  <header class="hero">
+    <p class="eyebrow">Economics · McGill University</p>
+    <h1>Catherine Jie Lu</h1>
+    <p class="lede">Honours Economics student with minors in Mathematics and Political Science, working at the intersection of <em>econometrics research</em>, <em>investment analysis</em> and <em>capital markets</em>.</p>
+    <div class="actions">
+      <a class="btn primary" href="Catherine_Lu_Resume.pdf" download>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M5 21h14"/></svg>
+        Download résumé
+      </a>
+      <a class="btn" href="mailto:catherine.lu2@mail.mcgill.ca">Email</a>
+      <a class="btn" href="https://linkedin.com/in/catjlu" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://github.com/catjlu" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </header>
+
+  <section id="research">
+    <div class="section-grid">
+      <h2>Research</h2>
+      <div>
+        <div class="entry paper">
+          <h3 class="title">Local Projections vs. VARs: An AR(1) Introduction</h3>
+          <div class="meta"><span class="role">ECON 480 · Independent Research Project</span><span>Supervised by Prof. Silvia Gonçalves</span><span>May 2026</span></div>
+          <p style="margin:0">Designed Monte Carlo simulations in MATLAB comparing Local Projections and Vector Autoregression (VAR) methods for impulse response estimation within a first-order autoregressive (AR(1)) framework. Paper and accompanying code received an A.</p>
+          <div class="tags"><span class="tag">Time series</span><span class="tag">Monte Carlo</span><span class="tag">MATLAB</span></div>
+        </div>
+        <div class="entry paper">
+          <h3 class="title">Did the Colombia–EU FTA (2013) Reduce Firms' Reported Customs Obstacles?</h3>
+          <div class="meta"><span class="role">ECON 437 · Methods of Causal Inference</span><span>With guidance from Prof. Matthieu Chemin</span><span>Apr 2026</span></div>
+          <p style="margin:0">Applied a difference-in-differences framework to assess the EU–Colombia free trade agreement's effect on firm-reported trade barriers. Designed four control groups and analyzed 12,000+ World Bank Enterprise Survey observations in STATA. Received an A.</p>
+          <div class="tags"><span class="tag">Causal inference</span><span class="tag">Difference-in-differences</span><span class="tag">Trade</span><span class="tag">STATA</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="section-grid">
+      <h2>Experience</h2>
+      <div>
+        <div class="entry">
+          <h3>Bikaner Advisors</h3>
+          <div class="meta"><span class="role">Investment Analyst</span><span>Montreal</span><span>Apr 2025 – Nov 2025</span></div>
+          <ul class="points">
+            <li>Built a portfolio benchmarking database for $1B+ in institutional allocations across 100+ investors and 6 asset classes, saving 30+ hours weekly and helping the team identify key allocation deviations from benchmarks.</li>
+            <li>Developed project workflows in Notion, adopted by 100% of the team within 2 weeks, reducing meeting time by 30%.</li>
+            <li>Received a return offer to work part-time during the school year for exceptional performance and impact.</li>
+          </ul>
+        </div>
+        <div class="entry">
+          <h3>Scotiabank Global Capital Markets</h3>
+          <div class="meta"><span class="role">Sales and Trading Analyst</span><span>Toronto</span><span>Sep 2023 – Dec 2023</span></div>
+          <ul class="points">
+            <li>Led the foreign exchange and interest rate options workflow between sales and trading, conducting systematic PnL analysis that enabled $200K–$2M in revenue recovery across 12+ weekly trade executions.</li>
+            <li>Developed an Excel VBA toolkit for 75+ option structures, replacing a manual process and saving 60+ hours weekly; standardized a PowerPoint template for 12+ trade decks, cutting revision cycles by 50%.</li>
+            <li>Automated daily FX market emails from Bloomberg to 60+ team members, generating an estimated $500K+ in revenue.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="leadership">
+    <div class="section-grid">
+      <h2>Leadership</h2>
+      <div>
+        <div class="entry">
+          <h3>McGill Model United Nations Assembly (McMUN)</h3>
+          <div class="meta"><span class="role">Chargée d'Affaires</span><span>Jun 2024 – Jan 2025</span></div>
+          <ul class="points">
+            <li>Led end-to-end registration for McMUN, Canada's largest and top-ranked Model UN conference, delivering a scalable system for 1,600+ attendees and sharply reducing error rates.</li>
+            <li>Automated operational logistics, consolidating a three-person task into one.</li>
+          </ul>
+          <div class="meta" style="margin-top:20px"><span class="role">Deputy Under Secretary-General, Specialized Committees</span><span>Sep 2023 – Jan 2024</span></div>
+          <ul class="points">
+            <li>Directed 30+ conference staff, ensuring writing quality and operational consistency across 7 teams.</li>
+            <li>Oversaw feedback mechanisms for 300+ attendees, enabling improvements in conference delivery.</li>
+          </ul>
+        </div>
+        <div class="entry">
+          <h3>Awards</h3>
+          <ul class="points" style="margin-top:12px">
+            <li>1st Place — BOLT Case Competition (2025)</li>
+            <li>1st Place — UC Berkeley Model United Nations Conference (2024)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="section-grid">
+      <h2>Education</h2>
+      <div>
+        <div class="entry">
+          <h3>McGill University</h3>
+          <div class="meta"><span class="role">BA Honours Economics · Minors in Mathematics &amp; Political Science</span><span>Montreal</span><span>Sep 2022 – Apr 2027</span></div>
+          <p style="margin:0">Coded Monte Carlo simulations and causal inference frameworks to analyze economic data in MATLAB and STATA. Tutor in Microeconomics, Economic Statistics and Econometrics.</p>
+          <ul class="courses">
+            <li><span>Research Project 1</span><span class="grade">A</span></li>
+            <li><span>Econometrics 2 – Honours</span><span class="grade">A</span></li>
+            <li><span>Methods of Causal Inference</span><span class="grade">A</span></li>
+            <li><span>Statistics</span><span class="grade">A</span></li>
+            <li><span>Political Economy of Int'l Organizations</span><span class="grade">A−</span></li>
+            <li><span>International Politics</span><span class="grade">A−</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="skills">
+    <div class="section-grid">
+      <h2>Skills</h2>
+      <dl>
+        <dt>Technical</dt>
+        <dd>Python, R, MATLAB, STATA, Excel (VBA / Modeling), PowerPoint, Bloomberg Terminal</dd>
+        <dt>Languages</dt>
+        <dd>English (fluent), French (intermediate), Mandarin Chinese (intermediate), Russian (elementary)</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="section-grid">
+      <h2>Contact</h2>
+      <ul class="contact-list">
+        <li><span class="label">Email</span><a href="mailto:catherine.lu2@mail.mcgill.ca">catherine.lu2@mail.mcgill.ca</a></li>
+        <li><span class="label">LinkedIn</span><a href="https://linkedin.com/in/catjlu" target="_blank" rel="noopener">linkedin.com/in/catjlu</a></li>
+        <li><span class="label">GitHub</span><a href="https://github.com/catjlu" target="_blank" rel="noopener">github.com/catjlu</a></li>
+        <li><span class="label">Location</span><span>Montreal, Canada</span></li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer>© <span id="y">2026</span> Catherine Jie Lu · Montreal</footer>
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
